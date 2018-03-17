@@ -1,10 +1,34 @@
-|||||||||
-|-|-|-|-|-|-|-|-|
 |Page in the Main Text|Page in the PDF File|Chapter|Sector|Location in the Sector|The Original|Should be|Comments|
+|-|-|-|-|-|-|-|-|
 |90|110|Chapter 7 – Hacking the Caesar Cipher with the Brute Force Technique|Source code for caesarHacker.py|Line 22 in .py|# handle the wrap-around if num is 26 or larger or less than 0|# handle the wrap-around if num is less than 0|When decrypting, the number to wrap-around can only be less than 0 since it is always doing a subtraction to decrypt|
 |121|142|Chapter 8 – The Transposition Cipher, Encrypting|Key Size and Message Length|4th Line From the Bottom|key size becomes more than twice the message length|key size becomes more than half the message length|
-|140|160|Chapter 10 – Programming a Program to Test Our Program|Sample Run of the Transposition Cipher Tester Program|The first 20 lines in the output result of the program|omitted|see below|Since the seed is set to be 42, the output should be all the same whenever you run it, the first message being identical with that in P152(main text or P172 in pdf file)|
+|140|160|Chapter 10 – Programming a Program to Test Our Program|Sample Run of the Transposition Cipher Tester Program|The first 20 lines in the output result of the program|see below(original)|see below(should be)|Since the seed is set to be 42, the output should be all the same whenever you run it, the first message being identical with that in P152(main text or P172 in pdf file)|
 
+original:
+```
+Test #1: "KQDXSFQDBPMMRGXFKCGIQUGWFFLAJIJKFJGSYOSAWGYBGUNTQX..."
+Test #2: "IDDXEEWUMWUJPJSZFJSGAOMFIOWWEYANRXISCJKXZRHMRNCFYW..."
+Test #3: "DKAYRSAGSGCSIQWKGARQHAOZDLGKJISQVMDFGYXKCRMPCMQWJM..."
+Test #4: "MZIBCOEXGRDTFXZKVNFQWQMWIROJAOKTWISTDWAHZRVIGXOLZA..."
+Test #5: "TINIECNCBFKJBRDIUTNGDINHULYSVTGHBAWDQMZCNHZOTNYHSX..."
+Test #6: "JZQIHCVNDWRDUFHZFXCIASYDSTGQATQOYLIHUFPKEXSOZXQGPP..."
+Test #7: "BMKJUERFNGIDGWAPQMDZNHOQPLEOQDYCIIWRKPVEIPLAGZCJVN..."
+Test #8: "IPASTGZSLPYCORCVEKWHOLOVUFPOMGQWZVJNYQIYVEOFLUWLMQ..."
+Test #9: "AHRYJAPTACZQNNFOTONMIPYECOORDGEYESYFHROZDASFIPKSOP..."
+Test #10: "FSXAAPLSQHSFUPQZGTIXXDLDMOIVMWFGHPBPJROOSEGPEVRXSX..."
+Test #11: "IVBCXBIHLWPTDHGEGANBGXWQZMVXQPNJZQPKMRUMPLLXPAFITN..."
+Test #12: "LLNSYMNRXZVYNPRTVNIBFRSUGIWUJREMPZVCMJATMLAMCEEHNW..."
+Test #13: "IMWRUJJHRWAABHYIHGNPSJUOVKRRKBSJKDHOBDLOUJDGXIVDME..."
+Test #14: "IZVXWHTIGKGHKJGGWMOBAKTWZWJPHGNEQPINYZIBERJPUNWJMX..."
+Test #15: "BQGFNMGQCIBOTRHZZOBHZFJZVSRTVHIUJFOWRFBNWKRNHGOHEQ..."
+Test #16: "LNKGKSYIPHMCDVKDLNDVFCIFGEWQGUJYJICUYIVXARMUCBNUWM..."
+Test #17: "WGNRHKIQZMOPBQTCRYPSEPWHLRDXZMJOUTJCLECKEZZRRMQRNI..."
+Test #18: "PPVTELDHJRZFPBNMJRLAZWRXRQVKHUUMRPNFKXJCUKFOXAGEHM..."
+Test #19: "UXUIGAYKGLYUQTFBWQUTFNSOPEGMIWMQYEZAVCALGOHUXJZPTY..."
+Test #20: "JSYTDGLVLBCVVSITPTQPHBCYIZHKFOFMBWOZNFKCADHDKPJSJA..."
+```
+
+should be:
 ```
 Test #1: "JEQLDFKJZWALCOYACUPLTRRMLWHOBXQNEAWSLGWAGQQSRSIUIQ..."
 Test #2: "SWRCLUCRDOMLWZKOMAGVOTXUVVEPIOJMSBEQRQOFRGCCKENINV..."
