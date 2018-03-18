@@ -54,4 +54,6 @@ Test #20: "JXJGRBCKZXPUIEXOJUNZEYYSEAEGVOJWIRTSSGPUWPNZUBQNDA..."
 
 |Page in the Main Text|Page in the PDF File|Chapter|Sector|Location in the Sector|The Original|Should be|Comments|
 |-|-|-|-|-|-|-|-|
-|165|185|Chapter 11 – Encrypting and Decrypting Files|If transpositionCipherFile.py is run|Line 51 in codes|If transpositionCipherFile.py is run|If transpositionFileCipher.py is run|
+|165|185|Chapter 11 – Encrypting and Decrypting Files|transpositionFileCipher.py|Line 51 in codes|If transpositionCipherFile.py is run|If transpositionFileCipher.py is run|
+|169|189|Chapter 12 – Detecting English Programmatically|Source code for detectEnglish.py|Line 5, 6 in codes|ommitted|ommitted|This is a print/display error. When copied and pasted, the words are one space from # but when viewed, it is obviously larger|
+|169|189|Chapter 12 – Detecting English Programmatically|How the Program Works|Line 5, 6 in codes|ommitted|ommitted|ibid|
