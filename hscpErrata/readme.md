@@ -51,3 +51,7 @@ Test #18: "OYLFXXZENDFGSXTEAHGHPBNORCFEPBMITILSSJRGDVMNSOMURV..."
 Test #19: "SOCLYBRVDPLNVJKAFDGHCQMXIOPEJSXEAAXNWCCYAGZGLZGZHK..."
 Test #20: "JXJGRBCKZXPUIEXOJUNZEYYSEAEGVOJWIRTSSGPUWPNZUBQNDA..."
 ```
+
+|Page in the Main Text|Page in the PDF File|Chapter|Sector|Location in the Sector|The Original|Should be|Comments|
+|-|-|-|-|-|-|-|-|
+|165|185|Chapter 11 – Encrypting and Decrypting Files|If transpositionCipherFile.py is run|Line 51 in codes|If transpositionCipherFile.py is run|If transpositionFileCipher.py is run|
