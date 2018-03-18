@@ -2,4 +2,7 @@
 2016年11月北京第2次印刷
 
 P119 line 23
-第47行的缩进量应与第48行相同
+第47行代码的缩进量应与第48行相同
+
+P119 line 28
+第51行代码应为 transpositionFileCipher.py 而非 transpositionCipherFile.py【英文版错误】

@@ -12,7 +12,7 @@ def main():
 	myMode = 'encrypt' # set to 'encrypt' or 'decrypt'
 
 	# If the input file does not exist, then the program terminates early.
-	if not os.path.exist(inputFilename):
+	if not os.path.exists(inputFilename):
 		print('The file %s does not exist. Quiting...' % (inputFilename))
 		sys.exit()
 
