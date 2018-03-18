@@ -12,4 +12,4 @@ P136 line 15
 
 P139 line 15
 向后兼容【翻译问题】？向下兼容？
-(感觉前面也有一个一样的 但英文版里搜索 compatible, python 2, backwards 等关键字找不到) # 不找了，应该确实没有！
+(感觉前面也有一个一样的 但英文版里搜索 compatible, python 2, backward 等关键字找不到) # 不找了，应该确实没有！
