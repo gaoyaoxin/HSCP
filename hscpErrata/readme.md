@@ -57,3 +57,6 @@ Test #20: "JXJGRBCKZXPUIEXOJUNZEYYSEAEGVOJWIRTSSGPUWPNZUBQNDA..."
 |165|185|Chapter 11 – Encrypting and Decrypting Files|transpositionFileCipher.py|Line 51 in codes|If transpositionCipherFile.py is run|If transpositionFileCipher.py is run|
 |169|189|Chapter 12 – Detecting English Programmatically|Source code for detectEnglish.py|Line 5, 6 in codes|ommitted|ommitted|This is a print/display error. When copied and pasted, the words are one space from # but when viewed, it is obviously larger|
 |169|189|Chapter 12 – Detecting English Programmatically|How the Program Works|Line 5, 6 in codes|ommitted|ommitted|ibid|
+|198|218|Chapter 14 – Modular Arithmetic and the Multiplicative Cipher|10 O’Clock + 5 Hours = 3 O’Clock|Line 5 to 6|Whether or not it is 3 AM or 3PM depends on if the current time is 10
+AM or 10 PM.|Whether or not it is 3 AM or 3PM depends on if the current time is 10
+PM or 10 AM.|The latter should be consistent with the former.|
