@@ -45,3 +45,12 @@ def addLettersToMapping(letterMapping, cipherword, candidate):
 	# This function adds the letters of the candidate as potential
 	# decryption letters for the cipherletters in the cipherletter
 	# mapping.
+	
+	letterMapping = copy.deepcopy(letterMapping)
+	for i in range(len(cipherword)):
+		if candidate[i] not in letterMapping[cipherword[i]]:
+			letterMapping[cipherword[i]].append(candidate[i])
+	return letterMapping
+
+
+def 
