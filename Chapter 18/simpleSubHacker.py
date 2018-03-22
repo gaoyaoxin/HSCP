@@ -102,4 +102,55 @@ def removeSolvedLettersFromMapping(letterMapping):
 		# should remove it from those lists.
 		for ciphertext in LETTERS:
 			for s in solvedLetters:
-				if len(letterMapping[cipherletter]) != 1 and s in letterMapping[cipherletter]
+				if len(letterMapping[cipherletter]) != 1 and s in letterMapping[cipherletter]:
+					letterMapping[cipherletter].remove(s)
+					if len(letterMapping[cipherletter]) == 1:
+						# A new letter is now solved, so loop again.
+						loopAgain = True
+	return letterMapping
+
+
+def hackSimpleSub(message):
+	intersectedMap = getBlankCipherletterMapping()
+	cipherwordList = nonLettersOrSpacePattern.sub('', message.upper()).split()
+	for cipherword in cipherwordList:
+		# Get a new cipherletter mapping for each ciphertext word.
+		newMap = getBlankCipherletterMapping()
+
+		wordPattern = makeWordPatterns.getWordPattern(cipherword)
+		if wordPattern not in wordPatterns.allPatterns:
+			continue # This word was not in our dictionary, so continue.
+
+		# Add the letters of each candidate to the mapping.
+		for candidate in wordPatterns.allPatterns[wordPattern]:
+			newMap = addLettersToMapping(newMap, cipherword, candidate)
+
+		# Intersect the new mapping with the existing intersected mapping.
+		intersectedMap = intersectMappings(intersectedMap, newMap)
+
+	# Remove any solved letters from the other lists.
+	return removeSolvedLettersFromMapping(intersectedMap)
+
+
+def decryptWithCipherletterMapping(ciphertext, letterMapping):
+	# Return a string of the ciphertext decrypted with the letter mapping,
+	# with any ambiguous decrypted letters replaced with an _ underscore.
+	
+	# First create a simple sub key from the letterMapping mapping.
+	key = ['x'] * len(LETTERS)
+	for cipherletter in LETTERS:
+		if len(letterMapping[cipherletter]) == 1:
+			# If there's only one letter, add it to the key.
+			keyIndex = LETTERS.find(letterMapping[cipherletter][0])
+			key[keyIndex] = cipherletter
+		else:
+			ciphertext = ciphertext.replace(cipherletter.lower(), '_')
+			ciphertext = ciphertext.replace(cipherletter.upper(), '_')
+	key = ''.join(key)
+
+	# With the key we've created, decrypt the ciphertext.
+	return simpleSubCipher.decryptMessage(key, ciphertext)
+
+
+if __name__ = '__main__':
+	main()
