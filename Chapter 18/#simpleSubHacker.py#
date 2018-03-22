@@ -1,4 +1,4 @@
-﻿# Simple Substitution Cipher Hacker
+# Simple Substitution Cipher Hacker
 # http://inventwithpython.com/hacking (BSD Licensed)
 
 import os, re, copy, pprint, pyperclip, simpleSubCipher, makeWordPatterns
@@ -81,6 +81,4 @@ def removeSolvedLettersFromMapping(letterMapping):
 	# For example, if 'A' maps to potential letters ['M', 'N'], and 'B'
 	# maps to ['N'], then we know that 'B' must map to 'N', so we can
 	# remove 'N' from the list of what 'A' could map to. So 'A' then maps
-	# to ['M']. Note that now that 'A' maps to only one letter, we can
-	# remove 'M' from the list of letters for every other
-	# letter. (This is)
+	# 
