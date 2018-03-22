@@ -102,4 +102,4 @@ def removeSolvedLettersFromMapping(letterMapping):
 		# should remove it from those lists.
 		for ciphertext in LETTERS:
 			for s in solvedLetters:
-				
+				if len(letterMapping[cipherletter]) != 1 and s in letterMapping[cipherletter]
