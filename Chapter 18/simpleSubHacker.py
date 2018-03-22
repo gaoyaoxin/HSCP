@@ -53,4 +53,32 @@ def addLettersToMapping(letterMapping, cipherword, candidate):
 	return letterMapping
 
 
-def 
+def intersectMappings(mapA, mapB):
+	# To intersect two maps, create a blank map, and then add only the 
+	# potential decryption letters if they exist in BOTH maps.
+	intersectedMapping = getBlankCipherletterMapping()
+	for letter in LETTERS:
+
+		# An empty list means "any letter is possible". In this case just
+		# copy the other map entirely.
+		if mapA[letter] == []:
+			intersectedMapping[letter] = copy.deepcopy(mapB[letter])
+		elif mapB[letter] == []:
+			intersectedMapping[letter] = copy.deepcopy(mapA[letter])
+		else:
+			# If a letter in mapA[letter] exists in mapB[letter], add
+			# that letter to intersectedMapping[letter].
+			for mappedLetter in mapB[letter]:
+				if mappedLetter in mapB[letter]:
+					intersectedMapping[letter].append(mappedLetter)
+
+	return intersectedMapping
+
+
+def removeSolvedLettersFromMapping(letterMapping):
+	# Cipher letters in the mapping that map to only one letter are
+	# "solved" and can be removed from the other letters.
+	# For example, if 'A' maps to potential letters ['M', 'N'], and 'B'
+	# maps to ['N'], then we know that 'B' must map to 'N', so we can
+	# remove 'N' from the list of what 'A' could map to. So 'A' then maps
+	# 
