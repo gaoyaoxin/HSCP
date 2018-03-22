@@ -83,4 +83,23 @@ def removeSolvedLettersFromMapping(letterMapping):
 	# remove 'N' from the list of what 'A' could map to. So 'A' then maps
 	# to ['M']. Note that now that 'A' maps to only one letter, we can
 	# remove 'M' from the list of letters for every other
-	# letter. (This is)
+	# letter. (This is why there is a loop that keeps reducing the map.)
+	letterMapping = copy.deepcopy(letterMapping)
+	loopAgain = True
+	while loopAgain:
+		# First assume that we will not loop again:
+		loopAgain = False
+
+		# solvedLetters will be a list of uppercase letters that have one
+		# and only one possible mapping in letterMapping
+		solvedLetters = []
+		for cipherletter in LETTERS:
+			if len(letterMapping[cipherletter]) == 1:
+				solvedLetters.append(letterMapping[cipherletter[0]])
+
+		# If a letter is solved, then it cannot possibly be a potential
+		# decryption letter for a different ciphertext letter, so we
+		# should remove it from those lists.
+		for ciphertext in LETTERS:
+			for s in solvedLetters:
+				
