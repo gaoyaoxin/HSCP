@@ -32,11 +32,11 @@ def main():
 
 def getBlankCipherletterMapping():
 	# Returns a dictionary value that is a blank cipherletter mapping.
-	return {'A': [], 'B': [], 'C': [], 'D': [], 'E': [], 'F': [], 'G': [], 'H': [], 'I': [], 'J': [], 'K': [], 'L': [], 'M': [], 'N': [], 'O': [], 'P': [], 'Q': [], 'R': [], 'S': [], 'T': [], 'U': [], 'V': [], 'W': [], 'X': [], 'Y': [], 'Z': [], }
+	return {'A': [], 'B': [], 'C': [], 'D': [], 'E': [], 'F': [], 'G': [], 'H': [], 'I': [], 'J': [], 'K': [], 'L': [], 'M': [], 'N': [], 'O': [], 'P': [], 'Q': [], 'R': [], 'S': [], 'T': [], 'U': [], 'V': [], 'W': [], 'X': [], 'Y': [], 'Z': []}
 
 
 def addLettersToMapping(letterMapping, cipherword, candidate):
-	# The letterMapping parameter is a "Cipherletter mapping" dictionary
+	# The letterMapping parameter is a "cipherletter mapping" dictionary
 	# value that the return value of this function starts as a copy of.
 	# The cipherword parameter is a string value of the ciphertext word.
 	# The candidate parameter is a possible English word that the
@@ -68,7 +68,7 @@ def intersectMappings(mapA, mapB):
 		else:
 			# If a letter in mapA[letter] exists in mapB[letter], add
 			# that letter to intersectedMapping[letter].
-			for mappedLetter in mapB[letter]:
+			for mappedLetter in mapA[letter]:
 				if mappedLetter in mapB[letter]:
 					intersectedMapping[letter].append(mappedLetter)
 
@@ -95,12 +95,12 @@ def removeSolvedLettersFromMapping(letterMapping):
 		solvedLetters = []
 		for cipherletter in LETTERS:
 			if len(letterMapping[cipherletter]) == 1:
-				solvedLetters.append(letterMapping[cipherletter[0]])
+				solvedLetters.append(letterMapping[cipherletter][0])
 
 		# If a letter is solved, then it cannot possibly be a potential
 		# decryption letter for a different ciphertext letter, so we
-		# should remove it from those lists.
-		for ciphertext in LETTERS:
+		# should remove it from those other lists.
+		for cipherletter in LETTERS:
 			for s in solvedLetters:
 				if len(letterMapping[cipherletter]) != 1 and s in letterMapping[cipherletter]:
 					letterMapping[cipherletter].remove(s)
@@ -152,5 +152,5 @@ def decryptWithCipherletterMapping(ciphertext, letterMapping):
 	return simpleSubCipher.decryptMessage(key, ciphertext)
 
 
-if __name__ = '__main__':
+if __name__ == '__main__':
 	main()
