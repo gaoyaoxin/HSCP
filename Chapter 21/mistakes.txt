@@ -12,3 +12,6 @@ P246 line 26
 
 P246 line 32
 代码中，单词之间应该用逗号连接，而非顿号 Enter D for done, or just press Enter
+
+P251 line 18
+倒数第二行，应为"http://invpy.com/vigenereHacker.py" 【英文版错误】
