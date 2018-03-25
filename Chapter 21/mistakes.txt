@@ -1,4 +1,14 @@
 ﻿2016年8月第1版
 2016年11月北京第2次印刷
 
-P line 
+P246 line 4
+代码中，单词之间应该用逗号连接，而非顿号 detectEnglish, vigenereCipher, pyperclip
+
+P246 line 25
+代码中，单词之间应该用逗号连接，而非顿号 word, ciphertext
+
+P246 line 26
+代码中，单词之间应该用逗号连接，而非顿号 decryptedText, wordPercentage=40
+
+P246 line 32
+代码中，单词之间应该用逗号连接，而非顿号 Enter D for done, or just press Enter
