@@ -15,3 +15,6 @@ P246 line 32
 
 P251 line 18
 倒数第二行，应为"http://invpy.com/vigenereHacker.py" 【英文版错误】
+
+P252 line 17
+第17行代码缩进程度应与第15，16行相同，这里多缩进了一个字符
