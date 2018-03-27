@@ -163,7 +163,34 @@ def attemptHackWithKeyLength(ciphertext, mostLikelyKeyLength):
 
 		# freqScores is a list of tuples like:
 		# [(<letter>, <Eng. Freq. match score>), ...]
+		# List is sorted by match score. Higher score means better match.
 		# See the englishFreqMatchScore() comments in freqAnalysis.py
 		freqScores = []
 		for possibleKey in LETTERS:
-			
+			decryptedText = vigenereCipher.decryptMessage(possibleKey, nthLetters)
+			keyAndFreqMatchTuple = (possibleKey, freqAnalysis.englishFreqMatchScore(decryptedText))
+			freqScores.append(keyAndFreqMatchTuple)
+		# Sort by match score
+		freqScores.sort(key=getItemAtIndexOne, reverse=True)
+
+		allFreqScores.append(freqScores[:NUM_MOST_FREQ_LETTERS])
+
+	if not SILENT_MODE:
+		for i in range(len(allFreqScores)):
+			# use i + 1 so the first letter is not called the "0th" letter
+			print('Possible letters for letter %s of the key: ' % (i + 1), end='')
+			for freqScore in allFreqScores[i]:
+				print('%s ' % freqScore[0], end='')
+			print() # print a newline
+
+	# Try every combination of the most likely letters for each position
+	# in the key.
+	for indexes in itertools.product(range(NUM_MOST_FREQ_LETTERS), repeat=mostLikelyKeyLength):
+		# Create a possible key from the letters in allFreqScores
+		possibleKey = ''
+		for i in range(mostLikelyKeyLength):
+			possibleKey += allFreqScores[i][indexes[i]][0]
+
+		if not SILENT_MODE:
+			print('Attmepting with key: %s' % (possibleKey))
+
