@@ -90,3 +90,80 @@ def getMostCommonFactors(seqFactors):
 		for factor in factorList:
 			if factor not in factorCounts:
 				factorCounts[factor] = 0
+			factorCounts[factor] += 1
+
+	# Second, put the factor and its count into a tuple, and make a list
+	# of these tuples so we can sort them.
+	factorsByCount = []
+	for factor in factorCounts:
+		# exclude factors larger than MAX_KEY_LENGTH
+		if factor <= MAX_KEY_LENGTH:
+			# factorsByCount is a list of tuples: (factor, factorCount)
+			# factorsByCount has a value like: [(3, 497), (2, 487), ...]
+			factorsByCount.append( (factor, factorCounts[factor]) )
+
+	# Sort the list by the factor count.
+	factorsByCount.sort(key=getItemAtIndexOne, reverse=True)
+
+	return factorsByCount
+
+
+def kasisiExamination(ciphertext):
+	# Find out the sequences of 3 to 5 letters that occur multiple times
+	# in the ciphertext. repeatedSeqSpacings has a value like:
+	# {'EXG': [192], 'NAF': [339, 972, 633], ...}
+	repeatedSeqSpacings = findRepeatSequencesSpacings(ciphertext)
+
+	# See getMostCommonFactors() for a decription of seqFactors.
+	seqFactors = {}
+	for seq in repeatedSeqSpacings:
+		seqFactors[seq] = []
+		for spacing in repeatedSeqSpacings[seq]:
+			seqFactors[seq].extend(getUsefulFactors(spacing))
+
+	# See getMostCommnonFactors() for a description of factorsByCount.
+	factorsByCount = getMostCommonFactors(seqFactors)
+
+	# Now we extract the factor counts from factorsByCount and
+	# put them in allLikelyKeyLengths so that they are easier to
+	# use later.
+	allLikelyKeyLengths = []
+	for twoIntTuple in factorsByCount:
+		allLikelyKeyLengths.append(twoIntTuple[0])
+
+	return allLikelyKeyLengths
+
+
+def getNthSubkeysLetters(n, keyLength, message):
+	# Returns every Nth letter for each keyLength set of letters in text.
+	# E.g. getNthSubkeysLetters(1, 3, 'ABCABCABC') returns 'AAA'
+	#      getNthSubkeysLetters(2, 3, 'ABCABCABC') returns 'BBB'
+	#      getNthSubkeysLetters(3, 3, 'ABCABCABC') returns 'CCC'
+	#      getNthSubkeysLetters(1, 5, 'ABCDEFGHI') returns 'AF'
+	
+	# Use a regular expression to remove non-letters from the message.
+	message = NONLETTERS_PATTERN.sub('', message)
+
+	i = n - 1
+	letters = []
+	while i < len(message):
+		letters.append(message[i])
+		i += keyLength
+	return ''.join(letters)
+
+
+def attemptHackWithKeyLength(ciphertext, mostLikelyKeyLength):
+	# Determine that most likely letters for each letter in the key.
+	ciphertextUp = ciphertext.upper()
+	# allFreqScores is a list of mostLikelyKeyLength number of lists.
+	# These inner lists are the freqScores lists.
+	allFreqScores = []
+	for nth in range(1, mostLikelyKeyLength + 1):
+		nthLetters = getNthSubkeysLetters(nth, mostLikelyKeyLength, ciphertextUp)
+
+		# freqScores is a list of tuples like:
+		# [(<letter>, <Eng. Freq. match score>), ...]
+		# See the englishFreqMatchScore() comments in freqAnalysis.py
+		freqScores = []
+		for possibleKey in LETTERS:
+			
