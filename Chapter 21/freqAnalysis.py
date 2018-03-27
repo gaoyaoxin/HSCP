@@ -57,11 +57,9 @@ def getFrequencyOrder(message):
 	# the letters for the final string
 	freqOrder = []
 	for freqPair in freqPairs:
-		#freqOrder.append(freqPairs[1])
-		freqOrder.append(str(freqPairs[1]))
+		freqOrder.append(freqPairs[1])
 
-	#return ''.join(freqOrder)
-	print(''.join(freqOrder))
+	return ''.join(freqOrder)
 
 
 def englishFreqMatchScore(message):
@@ -83,5 +81,3 @@ def englishFreqMatchScore(message):
 			matchScore += 1
 			
 	return matchScore
-
-getFrequencyOrder('This is a download from bbc learning enlgish dot com. To find out more, visit our website.')
