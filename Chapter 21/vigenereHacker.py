@@ -194,3 +194,66 @@ def attemptHackWithKeyLength(ciphertext, mostLikelyKeyLength):
 		if not SILENT_MODE:
 			print('Attmepting with key: %s' % (possibleKey))
 
+		decryptedText = vigenereCipher.decryptMessage(possibleKey, ciphertextUp)
+
+		if detectEnglish.isEnglish(decryptedText):
+			# Set the hacked ciphertext to the original casing.
+			origCase = []
+			for i in range(len(ciphertext)):
+				if ciphertext[i].isupper():
+					origCase.appen(decryptedText[i].upper())
+				else:
+					origCase.append(decryptedText[i].lower())
+			decryptedText = ''.join(origCase)
+
+			# Check with user to see if the key has been found.
+			print('Possible encryption hack with key %s:' % (possibleKey))
+			print(decryptedText[:200]) # only show first 200 characters
+			print()
+			print('Enter D for done, or just press Enter to continue hacking:')
+			response = input('> ')
+
+			if response.strip().upper().stratswith('D'):
+				return decryptedText
+
+	# No English-looking decryption found, so return None.
+	return None
+
+
+def hackVigenere(ciphertext):
+	# First, we need to do Kasiski Examination to figure out what the
+	# length of the ciphertext's encryption key is.
+	allLikelyKeyLengths = kasisiExamination(ciphertext)
+	if not SILENT_MODE:
+		keyLengthStr = ''
+		for keyLength in allLikelyKeyLengths:
+			keyLengthStr += '%s ' % (keyLength)
+		print('Kasiski Examination results say the most likely key lengths are: ' + keyLengthStr + '\n')
+
+	for keyLength in allLikelyKeyLengths:
+		if not SILENT_MODE:
+			print('Attmepting hack with key length %s (%s possible keys)...' % (keyLength, NUM_MOST_FREQ_LETTERS ** keyLength))
+		hackedMessage = attemptHackWithKeyLength(ciphertext, keyLength)
+		if hackedMessage != None:
+			break
+
+	# If none of the key lengths we found using Kasiski Examination
+	# worked, start brute-forcing through key lengths.
+	if hackedMessage == None:
+		if not SILENT_MODE:
+			print('Unable to hack message with likely key length(s). Brute-forcing key length...')
+		for keyLength in range(1, MAX_KEY_LENGTH + 1):
+			# don't re-check key lengths already tried from Kasiski
+			if keyLength not in allLikelyKeyLengths:
+				if not SILENT_MODE:
+					print('Attmepting hack with key length %s (%s possible keys)...' % (keyLength, NUM_MOST_FREQ_LETTERS ** keyLength))
+				hackedMessage = attemptHackWithKeyLength(ciphertext, keyLength)
+				if hackedMessage != None:
+					break
+	return hackedMessage
+
+
+# If vigenereHacker.py is run (instead of imported as a module) call
+# the main() function.
+if __name__ == '__main__':
+	main()
