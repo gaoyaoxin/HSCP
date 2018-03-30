@@ -4,7 +4,7 @@
 
 
 # frequency taken from http://en.wikipedia.org/wiki/Letter_frequency
-englishLetterFreq = {'E': 12.70, 'T': 9.06, 'A': 8.17, 'O': 7.51, 'I': 6.97, 'I': 6.97, 'N': 6.75, 'S': 6.33, 'H': 6.09, 'R': 5.99, 'D': 4.25, 'L': 4.03, 'C': 2.78, 'U': 2.76, 'M': 2.41, 'W': 2.36, 'F': 2.23, 'G': 2.02, 'Y': 1.97, 'P': 1.93, 'B': 1.29, 'V': 0.98, 'K': 0.77, 'J': 0.15, 'X': 0.15, 'Q': 0.10, 'Z': 0.07}
+englishLetterFreq = {'E': 12.70, 'T': 9.06, 'A': 8.17, 'O': 7.51, 'I': 6.97, 'N': 6.75, 'S': 6.33, 'H': 6.09, 'R': 5.99, 'D': 4.25, 'L': 4.03, 'C': 2.78, 'U': 2.76, 'M': 2.41, 'W': 2.36, 'F': 2.23, 'G': 2.02, 'Y': 1.97, 'P': 1.93, 'B': 1.29, 'V': 0.98, 'K': 0.77, 'J': 0.15, 'X': 0.15, 'Q': 0.10, 'Z': 0.07}
 ETAOIN = 'ETAOINSHRDLCUMWFGYPBVKJXQZ'
 LETTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
@@ -30,7 +30,7 @@ def getFrequencyOrder(message):
 	# Returns a string of the alphabet letters arranged in order of most
 	# frequently occurring in the message parameter.
 	
-	# firsr, get a dictionary of each letter and its frequency count
+	# first, get a dictionary of each letter and its frequency count
 	letterToFreq = getLetterCount(message)
 
 	# second, make a dictionary of each frequency count to each letter(s)
@@ -57,7 +57,7 @@ def getFrequencyOrder(message):
 	# the letters for the final string
 	freqOrder = []
 	for freqPair in freqPairs:
-		freqOrder.append(freqPairs[1])
+		freqOrder.append(freqPair[1])
 
 	return ''.join(freqOrder)
 
@@ -65,7 +65,7 @@ def getFrequencyOrder(message):
 def englishFreqMatchScore(message):
 	# Return the number of matches that the string in the message
 	# parameter has when its letter frequency is compared to English
-	# letter frequenct. A "match" is how many of its six most frequent
+	# letter frequency. A "match" is how many of its six most frequent
 	# and six least frequent letters is among the six most frequent and
 	# six least frequent letters for English.
 	freqOrder = getFrequencyOrder(message)

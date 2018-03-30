@@ -201,7 +201,7 @@ def attemptHackWithKeyLength(ciphertext, mostLikelyKeyLength):
 			origCase = []
 			for i in range(len(ciphertext)):
 				if ciphertext[i].isupper():
-					origCase.appen(decryptedText[i].upper())
+					origCase.append(decryptedText[i].upper())
 				else:
 					origCase.append(decryptedText[i].lower())
 			decryptedText = ''.join(origCase)
@@ -213,7 +213,7 @@ def attemptHackWithKeyLength(ciphertext, mostLikelyKeyLength):
 			print('Enter D for done, or just press Enter to continue hacking:')
 			response = input('> ')
 
-			if response.strip().upper().stratswith('D'):
+			if response.strip().upper().startswith('D'):
 				return decryptedText
 
 	# No English-looking decryption found, so return None.

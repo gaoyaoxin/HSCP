@@ -25,3 +25,6 @@ P255 line 170, 171, 172
 
 P255 line 188
 第188行代码缩进程度应与第187行相同，这里多缩进了4个字符
+
+P260 line 4
+message[i:I + seqLen] 应为 message[i:i + seqLen] i 应是小写的
