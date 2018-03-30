@@ -9,3 +9,9 @@ P294 line 47
 
 P296 line 0
 最后一行代码输出之后，还应有一行 Key files made.【英文版错误】
+
+P295 line 64
+第64行代码，应为(len(str(privateKey[0])), len(str(privateKey[1])))) 不是 public
+
+P296
+WARNING 不显示！【原书错误？？】

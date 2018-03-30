@@ -61,3 +61,6 @@ Test #20: "JXJGRBCKZXPUIEXOJUNZEYYSEAEGVOJWIRTSSGPUWPNZUBQNDA..."
 AM or 10 PM.|Whether or not it is 3 AM or 3PM depends on if the current time is 10
 PM or 10 AM.|The latter should be consistent with the former.|
 |264|284|Chapter 18 – Hacking the Simple Substitution Cipher|simpleSubHacker.py|Line 100 in .py code|If a letter is solved, than it cannot possibly be a potential|If a letter is solved, then it cannot possibly be a potential|
+
+|Page in the Main Text|Page in the PDF File|Chapter|Sector|Location in the Sector|The Original|Should be|Comments|
+|-|-|-|-|-|-|-|-|
