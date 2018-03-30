@@ -33,12 +33,12 @@ def primeSieve(sieveSize):
 		pointer = i * 2
 		while pointer < sieveSize:
 			sieve[pointer] = False
-			pointer += 1
+			pointer += i
 
 	# compile the list of primes
 	primes = []
 	for i in range(sieveSize):
 		if sieve[i] == True:
 			primes.append(i)
-
+	
 	return primes
