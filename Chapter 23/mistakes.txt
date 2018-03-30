@@ -1,4 +1,5 @@
 ﻿2016年8月第1版
 2016年11月北京第2次印刷
 
-P line 
+P286 line 2
+括号应为英文括号 pyperclip.copy(primeSieve(1000))
