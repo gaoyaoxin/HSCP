@@ -14,7 +14,7 @@ Chapter 7 – Hacking the Caesar Cipher with the Brute Force Technique
 Source code for caesarHacker.py  
 Line 22 in .py  
 # handle the wrap-around if num is 26 or larger or less than 0  
-- [] Should be: # handle the wrap-around if num is less than 0  
+ - [] Should be: # handle the wrap-around if num is less than 0  
 When decrypting, the number to wrap-around can only be less than 0 since it is always doing a subtraction to decrypt  
   
   
@@ -24,7 +24,7 @@ Chapter 8 – The Transposition Cipher, Encrypting
 Key Size and Message Length  
 4th Line From the Bottom  
 key size becomes more than twice the message length  
-- [] Should be: key size becomes more than half the message length  
+ - [] Should be: key size becomes more than half the message length  
   
   
 140  
@@ -33,7 +33,7 @@ Chapter 10 – Programming a Program to Test Our Program
 Sample Run of the Transposition Cipher Tester Program  
 The first 20 lines in the output result of the program  
 see below(original)  
-- [] Should be:see below(should be)  
+ - [] Should be:see below(should be)  
 Since the seed is set to be 42, the output should be all the same whenever you run it, the first message being identical with that in P152(main text or P172 in pdf file)  
   
   
@@ -101,7 +101,7 @@ Chapter 11 – Encrypting and Decrypting Files
 transpositionFileCipher.py  
 Line 51 in codes  
 If transpositionCipherFile.py is run  
-- [] Should be:If transpositionFileCipher.py is run  
+ - [] Should be:If transpositionFileCipher.py is run  
   
   
 169  
@@ -111,7 +111,7 @@ Source code for detectEnglish.py
 Line 5, 6 in codes  
 ommitted  
 ommitted  
-- [] Should be:This is a print/display error. When copied and pasted, the words are one space from # but when viewed, it is obviously larger  
+ - [] Should be:This is a print/display error. When copied and pasted, the words are one space from # but when viewed, it is obviously larger  
   
   
 169  
@@ -121,7 +121,7 @@ How the Program Works
 Line 5, 6 in codes  
 ommitted  
 ommitted  
-- [] Should be:ibid  
+ - [] Should be:ibid  
   
   
   
@@ -143,7 +143,7 @@ Chapter 14 – Modular Arithmetic and the Multiplicative Cipher
 10 O’Clock + 5 Hours = 3 O’Clock  
 Line 5 to 6  
 Whether or not it is 3 AM or 3PM depends on if the current time is 10 AM or 10 PM.  
-- [] Should be:Whether or not it is 3 AM or 3PM depends on if the current time is 10 PM or 10 AM.  
+ - [] Should be:Whether or not it is 3 AM or 3PM depends on if the current time is 10 PM or 10 AM.  
 The latter should be consistent with the former.  
   
   
@@ -153,7 +153,7 @@ Chapter 18 – Hacking the Simple Substitution Cipher
 simpleSubHacker.py  
 Line 100 in .py code  
 If a letter is solved, than it cannot possibly be a potential  
-- [] Should be:If a letter is solved, `then` it cannot possibly be a potential  
+ - [] Should be:If a letter is solved, `then` it cannot possibly be a potential  
   
   
 280  
@@ -167,18 +167,18 @@ ibid
   
 P326 main text  
 `http://invpy.com/vigenereHacking.py`  
-- [] should be `http://invpy.com/vigenereHacker.py`  
+ - [] should be `http://invpy.com/vigenereHacker.py`  
   
 makeRsaKeys.py line 47  
 `with the the n,e`  
-- [] one more 'the'  
+ - [] one more 'the'  
   
 P386 main text  
 ```  
 The private key is a 617 and a 309 digit number.  
 Writing private key to file al_sweigart_privkey.txt...  
 ```  
-- [] Lack a line `Key files made.`  
+ - [] Lack a line `Key files made.`  
   
   
 P386 main text  
@@ -187,9 +187,9 @@ Making key files...
 WARNING: The file al_sweigart_pubkey.txt or al_sweigart_privkey.txt already  
 exists! Use a different name or delete these files and re-run this program.  
 ```  
-- [] WARNING does not show when the .py is run in idle  
+ - [] WARNING does not show when the .py is run in idle  
   
   
-- [] Table 24-4  
+ - [] Table 24-4  
 2nd Block’s Indexes should begin with `128`  
 3rd Block’s Indexes should begin with `256`
