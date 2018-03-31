@@ -12,7 +12,7 @@ P90 main text
 Chapter 7 – Hacking the Caesar Cipher with the Brute Force Technique  
 Source code for caesarHacker.py  
 Line 22 in .py  
-# handle the wrap-around if num is 26 or larger or less than 0  
+\# handle the wrap-around if num is 26 or larger or less than 0  
 - [ ] Should be: # handle the wrap-around if num is less than 0  
 When decrypting, the number to wrap-around can only be less than 0 since it is always doing a subtraction to decrypt  
   
