@@ -27,7 +27,7 @@ def main():
 	elif mode == 'decrypt':
 		privKeyFilename = 'al_sweigart_privKey.txt'
 		print('Reading from %s and decrypting...' % (filename))
-		decryptedText - readFromFileAndDecrypt(filename, privKeyFilename)
+		decryptedText = readFromFileAndDecrypt(filename, privKeyFilename)
 
 		print('Decrypted text:')
 		print(decryptedText)
@@ -61,7 +61,7 @@ def getTextFromBlocks(blockInts, messageLength, blockSize=DEFAULT_BLOCK_SIZE):
 				# Decode the message string for the 128 (or whatever
 				# blockSize is set to) characters from this block integer.
 				asciiNumber = blockInt // (BYTE_SIZE ** i)
-				blockInt = blockint % (BYTE_SIZE ** i)
+				blockInt = blockInt % (BYTE_SIZE ** i)
 				blockMessage.insert(0, chr(asciiNumber))
 		message.extend(blockMessage)
 	return ''.join(message)
@@ -142,7 +142,7 @@ def readFromFileAndDecrypt(messageFilename, keyFilename):
 	blockSize = int(blockSize)
 
 	# Check that key size is greater than block size.
-	if keySize < blockSize * 8 # * 8 to convert bytes to bits
+	if keySize < blockSize * 8: # * 8 to convert bytes to bits
 		sys.exit('ERROR: Block size is %s bits and key size is %s bits. The RSA cipher requires the block size to be equal to or less than the key size. Did you specify the correct key file and encrypted file?' % (blockSize * 8, keySize))
 
 	# Convert the encrypted message into large int values.
