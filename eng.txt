@@ -22,35 +22,35 @@ P152 line 10
 
 ﻿
 P251 line 18
-倒数第二行，应为"http://invpy.com/vigenereHacker.py" 【英文版错误】
+[x]倒数第二行，应为"http://invpy.com/vigenereHacker.py" 【英文版错误】
 
 
 【已提交】P294 line 47
-第47行代码 with the the n,e 多了一个 the【英文版错误】
+[x]第47行代码 with the the n,e 多了一个 the【英文版错误】
 
 P296 line 0
-最后一行代码输出之后，还应有一行 Key files made.【英文版错误】
+[x]最后一行代码输出之后，还应有一行 Key files made.【英文版错误】
 
 
 P296
-WARNING 不显示！【原书错误？？】
+[x]WARNING 不显示！【原书错误？？】
 
 
 P314 line 15
-表 24-4 第2区块索引应从128开始，第3区块索引应从256开始【英文版错误】
+[x]表 24-4 第2区块索引应从128开始，第3区块索引应从256开始【英文版错误】
 
 
 
 【英文版错误】
 P68|7.3 line22 
-"26 or larger or" 可以略去，因为解密时是减法，不会大于等于26
+[x]"26 or larger or" 可以略去，因为解密时是减法，不会大于等于26
 
 
 
 【已提交】P93 line8
-两倍应为一半【英文版这里错了】
+[x]两倍应为一半【英文版这里错了】
 
 
 
 【已提交】P103 line 37
-9.11 布尔运算符的运算顺序， 第4行代码应为 True【英文版Errata已订正】
+[s]9.11 布尔运算符的运算顺序， 第4行代码应为 True【英文版Errata已订正】
