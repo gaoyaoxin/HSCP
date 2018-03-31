@@ -31,11 +31,7 @@ P140 main text
 Chapter 10 – Programming a Program to Test Our Program  
 Sample Run of the Transposition Cipher Tester Program  
 The first 20 lines in the output result of the program  
-see below(original)  
-- [ ] Should be:see below(should be)  
-Since the seed is set to be 42, the output should be all the same whenever you run it, the first message being identical with that in P152(main text or P172 in pdf file)  
-  
-  
+ 
 original:  
 ```  
 Test #1: "KQDXSFQDBPMMRGXFKCGIQUGWFFLAJIJKFJGSYOSAWGYBGUNTQX..."  
@@ -83,16 +79,9 @@ Test #18: "OYLFXXZENDFGSXTEAHGHPBNORCFEPBMITILSSJRGDVMNSOMURV..."
 Test #19: "SOCLYBRVDPLNVJKAFDGHCQMXIOPEJSXEAAXNWCCYAGZGLZGZHK..."  
 Test #20: "JXJGRBCKZXPUIEXOJUNZEYYSEAEGVOJWIRTSSGPUWPNZUBQNDA..."  
 ```  
+Since the seed is set to be 42, the output should be all the same whenever you run it, the first message being identical with that in P152(main text or P172 in pdf file)  
   
   
-Page in the Main Text  
-Page in the PDF File  
-Chapter  
-Sector  
-Location in the Sector  
-The Original  
-Should be  
-Comments  
   
 P165 main text  
 185  
@@ -122,17 +111,6 @@ ommitted
 ommitted  
 - [ ] Should be:ibid  
   
-  
-  
-  
-Page in the Main Text  
-Page in the PDF File  
-Chapter  
-Sector  
-Location in the Sector  
-The Original  
-Should be  
-Comments  
   
   
   
